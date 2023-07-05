@@ -6,6 +6,50 @@ Com styled-components, você pode escrever estilos CSS usando uma sintaxe semelh
 - Em React, um hook é uma função especial que permite que você adicione recursos extras a um componente funcional. Com os hooks, você pode usar coisas como estado (state), ciclos de vida (lifecycle) e outros recursos do React em componentes funcionais, que são as funções usadas para construir a interface do usuário. Antes dos hooks, era necessário usar componentes de classe para acessar esses recursos. Com os hooks, no entanto, você pode usar essas funcionalidades em componentes funcionais, tornando-os mais poderosos e fáceis de escrever e manter.Alguns exemplos de hooks populares incluem o useState, que permite que você adicione e gerencie o estado em um componente funcional, e o useEffect, que permite que você execute código em momentos específicos do ciclo de vida do componente.
 
 Os hooks são uma adição valiosa ao React, pois eles oferecem uma forma mais simples e direta de trabalhar com recursos avançados em componentes funcionais. Eles ajudam a tornar o código mais legível, reutilizável e fácil de entender.
-- O useEffect é um hook que serve para fazermos algo depois do carregamento da página. Então, como a requisição da API pode demorar um pouco mais que o carregamento da página, nós garantimos esse carregamento posterior dos resultados da API. Este hook é utilizado para executar algum efeito após a renderização da página. É utilizado para executar uma função assim que um componente é montado, assim como quando o componente sofre atualizações.
+- O useEffect é um hook que serve para fazermos algo depois do carregamento da página. Então, como a requisição da API pode demorar um pouco mais que o carregamento da página, nós garantimos esse carregamento posterior dos resultados da API. Este hook é utilizado para executar algum efeito após a renderização da página. É utilizado para executar uma função assim que um componente é montado, assim como quando o componente sofre atualizações. O useEffect permite que você execute efeitos colaterais em componentes funcionais. Efeitos colaterais são ações que ocorrem fora do fluxo normal de renderização, como buscar dados de uma API, manipular o DOM ou assinar eventos.
+```
+import React, { useState, useEffect } from 'react';
+
+function DataFetch() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  return (
+    <div>
+      {data ? (
+        <p>Data: {data}</p>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
+```
+
+O useEffect recebe duas funções: a primeira é a função de efeito em si, que contém a lógica a ser executada, e a segunda é um array de dependências opcional. O array de dependências permite especificar quando o efeito deve ser executado novamente com base em valores específicos.
 
 - Um dos hooks mais famosos é o useState, que permite que você adicione estado a um componente funcional. O estado é como uma memória do componente, onde ele pode armazenar informações importantes. Com o useState, você pode criar uma variável de estado e uma função para atualizá-la. Assim, toda vez que o estado mudar, o React irá atualizar o componente automaticamente.
+```
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+```
+Nesse exemplo, o useState é utilizado para adicionar o estado count ao componente Counter. O valor inicial do estado é definido como 0. A função setCount é utilizada para atualizar o valor do estado quando o botão é clicado.
