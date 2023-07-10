@@ -1,6 +1,6 @@
 import './App.css';
 import Cabecalho from './components/Cabecalho';
-import Grafico from './components/Grafico ';
+import Grafico from './components/Grafico';
 import Container from './components/Container';
 import Rodape from './components/Rodape';
 import Tabela from './components/Tabela';
