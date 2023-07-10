@@ -54,7 +54,9 @@ function Counter() {
 ```
 Nesse exemplo, o useState é utilizado para adicionar o estado count ao componente Counter. O valor inicial do estado é definido como 0. A função setCount é utilizada para atualizar o valor do estado quando o botão é clicado.
 
-* Biblioteca MUI
+* Biblioteca MUI:
+
+
 Para construir a tabela foi utilizado a biblioteca MUI, uma estrutura popular do React UI que fornece um conjunto de componentes de interface do usuário reutilizáveis e personalizáveis com base nas diretrizes de design de materiais do Google.O MUI é amplamente utilizado em muitos aplicativos da Web de nível de produção e possui uma comunidade vibrante e ativa que contribui para seu desenvolvimento e manutenção. Para instalar a biblioteca em seu projeto você pode escrever o seguinte comando no terminal:
 npm install @mui/material @emotion/react @emotion/styled
 
