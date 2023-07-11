@@ -60,3 +60,34 @@ Nesse exemplo, o useState é utilizado para adicionar o estado count ao componen
 Para construir a tabela foi utilizado a biblioteca MUI, uma estrutura popular do React UI que fornece um conjunto de componentes de interface do usuário reutilizáveis e personalizáveis com base nas diretrizes de design de materiais do Google.O MUI é amplamente utilizado em muitos aplicativos da Web de nível de produção e possui uma comunidade vibrante e ativa que contribui para seu desenvolvimento e manutenção. Para instalar a biblioteca em seu projeto você pode escrever o seguinte comando no terminal:
 npm install @mui/material @emotion/react @emotion/styled
 
+```
+if (consultas && profissionais) {
+    data = profissionais.map((profissional) => ({
+        nome: profissional.nome,
+        consultas: consultas.filter((consulta) =>
+            consulta.profissional.some((p) => p.nome === profissional.nome)
+        ).length,
+    }));
+}
+
+O método filter é usado para filtrar elementos da lista consultas que possuem o mesmo nome do profissional.
+
+O método filter está sendo usado para filtrar elementos da lista consultas que possuem o mesmo nome do profissional e depois retornar um array.
+```
+
+Métodos de array são funções nativas em JavaScript que permitem a manipulação e transformação de elementos em um array. Esses métodos podem ser usados para adicionar, remover, pesquisar e filtrar elementos em um array, entre outras tarefas.
+
+map: cria um novo array com o resultado de uma função aplicada a cada elemento do array original;
+filter: cria um novo array com todos os elementos que atendem a um determinado critério;
+some: testa se ao menos um dos elementos no array passa no teste implementado pela função atribuída.
+Utilizados no seguinte trecho de código:
+```
+ data = profissionais.map((profissional) => ({
+            nome: profissional.nome,
+            consultas: consultas.filter((consulta) =>
+                consulta.profissional.some((p) => p.nome === profissional.nome)
+            ).length,
+        }));
+
+Que podemos ler como: está sendo criado um array a partir do array de profissionais com o método map. Para cada profissional está sendo criado um objeto que possui a propriedade “nome” que recebe o nome do profissional, e também a propriedade consultas. O valor de consultas é definido por um filtro (filtro) que retorna um array com as consultas que retornem uma condição verdadeira. Para fazer essa verificação, é utilizado o método some pra verificar se o nome do profissional naquela consulta é o mesmo nome do profissional que estamos verificando. Como só precisamos do número de consultas, terminamos esse filtro com a propriedade length que informa a quantidade de itens naquele array.
+```
