@@ -1,5 +1,6 @@
 <h3>React com Typescript: desenvolvendo uma área administrativa</h3>
 <h4>Rodar a aplicação</h4>
+
 ```
 Instalação: 
 npm i
@@ -90,6 +91,7 @@ map: cria um novo array com o resultado de uma função aplicada a cada elemento
 filter: cria um novo array com todos os elementos que atendem a um determinado critério;
 some: testa se ao menos um dos elementos no array passa no teste implementado pela função atribuída.
 Utilizados no seguinte trecho de código:
+
 ```
  data = profissionais.map((profissional) => ({
             nome: profissional.nome,
