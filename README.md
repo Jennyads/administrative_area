@@ -71,7 +71,6 @@ if (consultas && profissionais) {
 }
 
 O método filter é usado para filtrar elementos da lista consultas que possuem o mesmo nome do profissional.
-
 O método filter está sendo usado para filtrar elementos da lista consultas que possuem o mesmo nome do profissional e depois retornar um array.
 ```
 
@@ -89,5 +88,8 @@ Utilizados no seguinte trecho de código:
             ).length,
         }));
 
-Que podemos ler como: está sendo criado um array a partir do array de profissionais com o método map. Para cada profissional está sendo criado um objeto que possui a propriedade “nome” que recebe o nome do profissional, e também a propriedade consultas. O valor de consultas é definido por um filtro (filtro) que retorna um array com as consultas que retornem uma condição verdadeira. Para fazer essa verificação, é utilizado o método some pra verificar se o nome do profissional naquela consulta é o mesmo nome do profissional que estamos verificando. Como só precisamos do número de consultas, terminamos esse filtro com a propriedade length que informa a quantidade de itens naquele array.
+Que podemos ler como: está sendo criado um array a partir do array de profissionais com o método map.
+Para cada profissional está sendo criado um objeto que possui a propriedade “nome” que recebe o nome do profissional, e também a propriedade consultas. O valor de consultas é definido por um filtro (filtro) que retorna um array com as consultas que retornem uma condição verdadeira.
+Para fazer essa verificação, é utilizado o método some pra verificar se o nome do profissional naquela consulta é o mesmo nome do profissional que estamos verificando.
+Como só precisamos do número de consultas, terminamos esse filtro com a propriedade length que informa a quantidade de itens naquele array.
 ```
